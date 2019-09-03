@@ -3,7 +3,7 @@ layout:     post
 title:      ReactiveCocoa 基础
 subtitle:   函数式编程框架 ReactiveCocoa 基础入门
 date:       2016-12-26
-author:     BY
+author:     Phillip
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
@@ -75,7 +75,7 @@ NSObject+Caculator.h
 
 // 计算
 + (int)makeCaculators:(void (^)(CaculatorMaker *))block;
-                       
+
 @end
 ```
 
@@ -85,11 +85,11 @@ NSObject+Caculator.m
 @implementation NSObject (Caculator)
 
 + (int)makeCaculators:(void (^)(CaculatorMaker *))block {
-    
+
     CaculatorMaker *mgr = [[CaculatorMaker alloc] init];
-    
+
     block(mgr);
-    
+
     return (mgr.result);
 }
 
@@ -129,19 +129,19 @@ CaculatorMaker.m
 - (CaculatorMaker *(^)(int))add {
 
     return ^CaculatorMaker *(int value) {
-        
+
         _result += value;
-        
+
         return self;
     };
 }
 
 - (CasulatorBlock)sub {
-    
+
     return ^CaculatorMaker *(int value) {
-        
+
         _result -= value;
-        
+
         return self;
     };
 }
@@ -149,19 +149,19 @@ CaculatorMaker.m
 - (CasulatorBlock)muilt {
 
     return ^CaculatorMaker *(int value) {
-        
+
         _result *= value;
-        
+
         return self;
     };
 }
 
 - (CasulatorBlock)divide {
-    
+
     return ^CaculatorMaker *(int value) {
-        
+
         _result /= value;
-        
+
         return self;
     };
 }
@@ -173,12 +173,12 @@ CaculatorMaker.m
 
 ```
 int result = [NSObject makeCaculators:^(CaculatorMaker *make) {
-        
+
         // ( 1 + 2 - 5 ) * (-4) / 4
         make.add(1).add(2).sub(5).muilt(-4).divide(4);
 
     }];
-    
+
     NSLog(@"%d", result);
 ```
 
@@ -197,19 +197,19 @@ int result = [NSObject makeCaculators:^(CaculatorMaker *make) {
 
 ```
     Calculator *caculator = [[Calculator alloc] init];
-    
+
     BOOL isqule = [[[caculator caculator:^int(int result) {
-        
+
         result += 2;
         result *= 5;
         return result;
-        
+
     }] equle:^BOOL(int result) {
-        
+
         return result == 10;
-        
+
     }] isEqule];
-    
+
     NSLog(@"%d", isqule);
 ```
 
@@ -241,16 +241,16 @@ Calculator.m
 - (Calculator *)caculator:(int (^)(int))caculator {
 
     _result = caculator(_result);
-    
+
     return self;
-    
+
 }
 
 
 - (Calculator *)equle:(BOOL (^)(int))operation {
 
     _isEqule = operation(_result);
-    
+
     return self;
 }
 
@@ -272,7 +272,7 @@ Calculator.m
 
 >ReactiveCocoa的[GitHub地址](https://github.com/ReactiveCocoa/ReactiveCocoa)
 
-#### Objective-C 
+#### Objective-C
 
 **ReactiveCocoa 2.5**版本以后改用了**Swift**，所以**Objective-C**项目需要导入**2.5版本**
 
@@ -291,8 +291,8 @@ end
 PS:新版本的`CocoaPods`需要加入
 
 ```
-target 'YouProjectName' do 
-... 
+target 'YouProjectName' do
+...
 end
 ```
 这句话来限定项目，否则导入失败。
@@ -406,73 +406,73 @@ end
  `RACReplaySubject`可以先发送信号，在订阅信号，`RACSubject`就不可以。
 
  **使用场景一**:如果一个信号每被订阅一次，就需要把之前的值重复发送一遍，使用重复提供信号类。
- 
+
  **使用场景二**:可以设置capacity数量来限制缓存的value的数量,即只缓充最新的几个值。
- 
+
  **ACSubject** 和 **RACReplaySubject** 简单使用：
- 
+
  **ACSubject**
- 
+
  ```
      // RACSubject使用步骤
     // 1.创建信号 [RACSubject subject]，跟RACSiganl不一样，创建信号时没有block。
     // 2.订阅信号 - (RACDisposable *)subscribeNext:(void (^)(id x))nextBlock
     // 3.发送信号 sendNext:(id)value
-    
+
     // RACSubject:底层实现和RACSignal不一样。
     // 1.调用subscribeNext订阅信号，只是把订阅者保存起来，并且订阅者的nextBlock已经赋值了。
     // 2.调用sendNext发送信号，遍历刚刚保存的所有订阅者，一个一个调用订阅者的nextBlock。
-    
-    
+
+
     // 1. 创建信号
     RACSubject *subject = [RACSubject subject];
-    
+
     // 2.订阅信号
     [subject subscribeNext:^(id x) {
-       
+
         // block调用时机：当信号发出新值，就会调用
         NSLog(@"收到信号");
-        
+
     }];
-    
+
     // 3.发送信号
     NSLog(@"发送信号");
     [subject sendNext:@"1"];
  ```
- 
+
  ```
      // RACReplaySubject使用步骤:
     // 1.创建信号 [RACSubject subject]，跟RACSiganl不一样，创建信号时没有block。
     // 2.可以先订阅信号，也可以先发送信号。
     // 2.1 订阅信号 - (RACDisposable *)subscribeNext:(void (^)(id x))nextBlock
     // 2.2 发送信号 sendNext:(id)value
-    
+
     // RACReplaySubject:底层实现和RACSubject不一样。
     // 1.调用sendNext发送信号，把值保存起来，然后遍历刚刚保存的所有订阅者，一个一个调用订阅者的nextBlock。
     // 2.调用subscribeNext订阅信号，遍历保存的所有值，一个一个调用订阅者的nextBlock
-    
+
     // 如果想当一个信号被订阅，就重复播放之前所有值，需要先发送信号，在订阅信号。
     // 也就是先保存值，在订阅值。
-    
-    
+
+
     // 1.创建信号
     RACReplaySubject *replaySubject = [RACReplaySubject subject];
-    
 
-    
+
+
     // 3.先订阅信号
     [replaySubject subscribeNext:^(id x) {
-        
+
         NSLog(@"第一个订阅者接受到的数据%@", x);
     }];
-    
+
     // 2.发送信号
     [replaySubject sendNext:@1];
     [replaySubject sendNext:@2];
-    
+
     // 后订阅信号
     [replaySubject subscribeNext:^(id x) {
-        
+
         NSLog(@"第二个订阅者接收到的数据%@",x);
     }];
  ```
@@ -506,7 +506,7 @@ end
 @end
 
 步骤三：在第一个控制器中，监听跳转按钮，给第二个控制器的代理信号赋值，并且监听.
-@implementation OneViewController 
+@implementation OneViewController
 - (IBAction)btnClick:(id)sender {
 
     // 创建第二个控制器
@@ -542,63 +542,63 @@ end
 ```
     // 1.遍历数组
     NSArray *numbers = @[@1,@2,@3,@4];
-    
+
     // 这里其实是三步
     // 第一步: 把数组转换成集合RACSequence numbers.rac_sequence
     // 第二步: 把集合RACSequence转换RACSignal信号类,numbers.rac_sequence.signal
     // 第三步: 订阅信号，激活信号，会自动把集合中的所有值，遍历出来。
-    
+
     [numbers.rac_sequence.signal subscribeNext:^(id x) {
-        
+
         NSLog(@"%@", x);
     }];
-    
-    
-    
+
+
+
     // 2.遍历字典,遍历出来的键值对 都会包装成 RACTuple(元组对象) @[key, value]
     NSDictionary *dic = @{@"name": @"BYqiu", @"age": @18};
-    
+
     [dic.rac_sequence.signal subscribeNext:^(RACTuple *x) {
-        
+
         // 解元组包，会把元组的值，按顺序给参数里的变量赋值
         // 写法相当与
         // NSString *key = x[0];
         // NSString *value = x[1];
         RACTupleUnpack(NSString *key, NSString *value) = x;
-        
+
         NSLog(@"key:%@, value:%@", key, value);
-        
+
     }];
-    
+
     // 3.字典转模型
-    
+
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"flags.plist" ofType:nil];
-    
+
     NSArray *dicArray = [NSArray arrayWithContentsOfFile:filePath];
-    
+
     NSMutableArray *items = [NSMutableArray array];
-    
+
     // OC写法
     for (NSDictionary *dic in dicArray) {
-        
+
         //FlagItem *item = [FlagItem flagWithDict:dict];
         //[items addObject:item];
     }
-    
-    
+
+
     // RAC写法
     [dicArray.rac_sequence.signal subscribeNext:^(id x) {
         // 利用RAC遍历， x：字典
-        
+
         //FlagItem *item = [FlagItem flagWithDict:x];
         //[items addObject:item];
     }];
-    
+
     // RAC高级用法（函数式编程）
     NSArray *flags = [[dicArray.rac_sequence map:^id(id value) {
-        
+
         return  [FlagItem flagWithDict:value];
-        
+
     }] array];
 
 ```
@@ -608,27 +608,27 @@ end
 >RAC中用于处理事件的类，可以把事件如何处理,事件中的数据如何传递，包装到这个类中，他可以很方便的监控事件的执行过程。
 
  一、RACCommand使用步骤:
- 
+
  1. 创建命令 initWithSignalBlock:(RACSignal * (^)(id input))signalBlock
  2. 在signalBlock中，创建RACSignal，并且作为signalBlock的返回值
  3. 执行命令 - (RACSignal *)execute:(id)input
 
  二、RACCommand使用注意:
- 
+
  1. signalBlock必须要返回一个信号，不能传nil.
  2. 如果不想要传递信号，直接创建空的信号[RACSignal empty];
  3. RACCommand中信号如果数据传递完，必须调用[subscriber sendCompleted]，这时命令才会执行完毕，否则永远处于执行中。
  4. RACCommand需要被强引用，否则接收不到RACCommand中的信号，因此RACCommand中的信号是延迟发送的。
 
  三、RACCommand设计思想：
- 
+
  内部signalBlock为什么要返回一个信号，这个信号有什么用。
- 
+
  1. 在RAC开发中，通常会把网络请求封装到RACCommand，直接执行某个RACCommand就能发送请求。
  2. 当RACCommand内部请求到数据的时候，需要把请求的数据传递给外界，这时候就需要通过signalBlock返回的信号传递了。
 
  四、如何拿到RACCommand中返回信号发出的数据。
- 
+
  1. RACCommand有个执行信号源executionSignals，这个是signal of signals(信号的信号),意思是信号发出的数据是信号，不是普通的类型。
  2. 订阅executionSignals就能拿到RACCommand中返回的信号，然后订阅signalBlock返回的信号，就能获取发出的值。
 
@@ -642,29 +642,29 @@ end
 // 1.创建命令
     RACCommand *command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         NSLog(@"执行命令");
-        
+
         // 返回空信号
         //return [RACSignal empty];
-        
+
         // 2.创建信号 传递数据
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-            
+
             [subscriber sendNext:@"请求数据"];
-            
+
             // 注意：数据传递完，最好调用sendCompleted,这时命令才执行完毕
             [subscriber sendCompleted];
-            
+
             return nil;
         }];
     }];
-    
+
     // 强引用命令，不要被销毁，否则接收不到数据
     _command = command;
-    
+
     // 3.订阅RACCommand的信号
     [command.executionSignals subscribeNext:^(id x) {
         [x subscribeNext:^(id x) {
-            
+
             NSLog(@"订阅RACCommand的信号: %@", x);
         }];
     }];
@@ -672,25 +672,25 @@ end
     // RAC高级用法
     // switchToLatest:用于signal of signals，获取signal of signals发出的最新信号,也就是可以直接拿到RACCommand中的信号
     [command.executionSignals.switchToLatest subscribeNext:^(id x) {
-       
+
         NSLog(@"RAC高级用法: %@", x);
     }];
-    
+
     // 4.监听命令是否执行完毕,默认会来一次，可以直接跳过，skip表示跳过第一次信号。
     [[command.executing skip:1] subscribeNext:^(id x) {
-       
+
         if ([x boolValue] == YES) {
-            
+
             // 正在执行
             NSLog(@"正在执行");
-            
+
         } else {
-            
+
             // 执行完毕
             NSLog(@"执行完成");
         }
     }];
-    
+
     // 5.执行命名
     [self.command execute:@1];
 ```
@@ -730,22 +730,22 @@ RACMulticastConnection底层原理:
 ```
 // 创建请求信号
 RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-    
+
     NSLog(@"发送请求");
     [subscriber sendNext:@1];
-    
+
     return nil;
 }];
 
 // 订阅信号
 [signal subscribeNext:^(id x) {
-    
+
     NSLog(@"接受数据: %@", x);
 }];
 
 // 再次订阅信号，会再次执行发送请求，也就是每次订阅都会发送一次请求
 [signal subscribeNext:^(id x) {
-    
+
     NSLog(@"接受数据: %@", x);
 }];
 ```
@@ -764,10 +764,10 @@ RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> s
 
 ```
 RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-    
+
     NSLog(@"发送请求");
     [subscriber sendNext:@1];
-    
+
     return nil;
 }];
 
@@ -777,12 +777,12 @@ RACMulticastConnection *connect = [signal publish];
 // 订阅信号
 // 注意：订阅信号，也不能激活信号，只是保存订阅者到数组，必须通过连接，当调用连接，就会一次性调用所有订阅者的SendNext
 [connect.signal subscribeNext:^(id x) {
-    
+
     NSLog(@"订阅者1信号: %@", x);
 }];
 
 [connect.signal subscribeNext:^(id x) {
-    
+
     NSLog(@"订阅者2信号: %@", x);
 }];
 
@@ -810,7 +810,7 @@ RACMulticastConnection *connect = [signal publish];
 
 # ReactiveCocoa开发中常见用法
 
-1. 替换代理			
+1. 替换代理
 2. 替换KVO
 3. 监听事件
 4. 替换通知
@@ -832,14 +832,14 @@ RACMulticastConnection *connect = [signal publish];
 ```
 // 使用segue跳转
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-- 
+-
     if ([segue.identifier isEqualToString:@"goRedVC"]) {
-        
+
         RedViewController *rvc = segue.destinationViewController;
-        
+
         // 订阅rvc中的 btnTap: 点击事件
         [[rvc rac_signalForSelector:@selector(btnTap:)] subscribeNext:^(id x) {
-        
+
             NSLog(@"RedVC btnTap！");
         }];
     }
@@ -850,7 +850,7 @@ RACMulticastConnection *connect = [signal publish];
 
 ```
 - (IBAction)btnTap:(id)sender {
-    
+
     NSLog(@"!");
 }
 ```
@@ -878,8 +878,8 @@ RACMulticastConnection *connect = [signal publish];
                                          selector:@selector(userDidChange:)
                                              name:kTTCurrentUserLoggedOffNotification
                                            object:nil];
-                                           
-// 使用RAC订阅通知 ，takeUntil限定信号的声明周期                                  
+
+// 使用RAC订阅通知 ，takeUntil限定信号的声明周期
 [[[[NSNotificationCenter defaultCenter] rac_addObserverForName:UIApplicationDidEnterBackgroundNotification object:nil]
   takeUntil:[self rac_willDeallocSignal]]
   subscribeNext:^(id x) {
@@ -894,7 +894,7 @@ RACMulticastConnection *connect = [signal publish];
 ```
 // 监听 btn 的 UIControlEventTouchUpInside 点击事件
 [[self.btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-    
+
     NSLog(@"btnTap");
 }];
 ```
@@ -906,7 +906,7 @@ RACMulticastConnection *connect = [signal publish];
 
 ```
 [[self.textField rac_textSignal] subscribeNext:^(id x) {
-        
+
 	NSLog(@"textField change: %@", x);
 }];
 ```
@@ -918,41 +918,41 @@ RACMulticastConnection *connect = [signal publish];
 ```
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
 	// 处理多个请求都返回结果的时候，统一处理
     // 如同时进行多个网络请求，每个请求都正确返回时，再去刷新页面
-    
+
     RACSignal *signalOne = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        
+
         // 网络请求1
         // ...
-        
+
         // 返回成功
         [subscriber sendNext:@"网络请求1 data"];
-        
+
         return nil;
     }];
-    
+
     RACSignal *signalTwo = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        
+
         // 网络请求2
         // ...
-        
+
         // 返回成功
         [subscriber sendNext:@"网络请求2 data"];
-        
+
         return nil;
     }];
-    
+
     [self rac_liftSelector:@selector(updateWithR1:R2:) withSignalsFromArray:@[signalOne, signalTwo]];
-    
+
 }
 
 // 更新界面
 - (void)updateWithR1:(id)r1 R2:(id)r2 {
 
     NSLog(@"R1:%@, R2：%@ 完成！", r1, r2);
-    
+
 }
 ```
 
@@ -960,7 +960,7 @@ RACMulticastConnection *connect = [signal publish];
 #### **注意**：
 
 - `替换KVO`和 `监听文本框文字改变` 方法在创建监听方法时就会执行一次。
-	
+
 	```
 2016-12-28 16:53:50.746 ReactiveCacoa[4956:1246592] slider value Change：0.5
 2016-12-28 16:53:50.748 ReactiveCacoa[4956:1246592] textField change:
