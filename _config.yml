@@ -1,7 +1,7 @@
 # Site settings
 title: Phillip_Wei Blog
 SEOTitle: 邢威的博客 | BY Phillip
-header-img: img/post-bg-desk.jpg
+header-img: img/post-bg-unix-linux.jpg
 email: u5656487@anu.edu.au
 description: "If there's no failure then what is success?"
 keyword: "Wei, Phillip_Wei Blog, 邢威的博客, xingwei, 邢威, Data, Django, Vue"
@@ -12,7 +12,7 @@ github_repo: "https://github.com/u5656487/u5656487.github.io.git" # you code rep
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "If there's no failure then what is success?"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/avatar-m.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -66,7 +66,7 @@ gitalk:
   clientSecret: 70913c1ac471b5320a912105c43b6d57589ab166    #生成的clientSecret
   repo: u5656487.github.io    #仓库名称
   owner: u5656487    #github用户名
-  admin: u5656487
+  admin: [u5656487]
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
