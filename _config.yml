@@ -1,10 +1,10 @@
 # Site settings
-title: Phillip_Wei Blog
-SEOTitle: 邢威的博客 | BY Phillip
+title: Phillip Wei's Blog
+SEOTitle: 邢威的世界 | By Phillip
 header-img: img/post-bg-unix-linux.jpg
 email: u5656487@anu.edu.au
 description: "If there's no failure then what is success?"
-keyword: "Wei, Phillip_Wei Blog, 邢威的博客, xingwei, 邢威, Data, Django, Vue"
+keyword: "Wei, Phillip Wei's Blog, 邢威的博客, xingwei, 邢威, Data, Django, Vue"
 url: "http://u5656487.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/u5656487/u5656487.github.io.git" # you code repository
