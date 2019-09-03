@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ce6eccf0-1802-4761-a2e5-ee8fbed68ceb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/img/test.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2016-01-06-ReactiveCocoa-进阶.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2016-01-06-ReactiveCocoa-进阶.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2016-12-01-快速添加圆角和描边.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2016-12-01-快速添加圆角和描边.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2016-12-13-定时器你真的会使用吗？.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2016-12-13-定时器你真的会使用吗？.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2016-12-26-ReactiveCocoa-基础.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2016-12-26-ReactiveCocoa-基础.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2017-02-06-快速搭建个人博客.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2017-02-06-快速搭建个人博客.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2017-02-14-随便聊聊.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2017-02-14-随便聊聊.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2017-02-15-Git指令整理.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2017-02-15-Git指令整理.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2017-02-16-Git-代码回滚.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2017-02-16-Git-代码回滚.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2017-02-22-使用-.gitignore-忽略-git-仓库中的文件.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2017-02-22-使用-.gitignore-忽略-git-仓库中的文件.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2017-06-19-快速配置zsh.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2017-06-19-快速配置zsh.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2017-3-07-文件目录树状(tree)显示.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2017-3-07-文件目录树状(tree)显示.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
-    </list>
+    <list default="true" id="ce6eccf0-1802-4761-a2e5-ee8fbed68ceb" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -196,7 +180,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
+            <state relative-caret-position="-672">
               <caret line="3" column="59" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
             </state>
           </provider>
@@ -306,25 +290,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1567504368198</updated>
-      <workItem from="1567504371063" duration="2120000" />
+      <workItem from="1567504371063" duration="2757000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2120000" />
+    <option name="totallyTimeSpent" value="2757000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1293" height="693" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Grunt " side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19459888" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20969023" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.31316727" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.31316727" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291815" />
@@ -501,7 +484,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
+        <state relative-caret-position="-672">
           <caret line="3" column="59" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
         </state>
       </provider>
