@@ -11,18 +11,19 @@ github_repo: "https://github.com/u5656487/u5656487.github.io.git" # you code rep
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "What we think, we become."
+sidebar-about-description: "An enthusiastic full stack learner who is studying accounting."
 sidebar-avatar: /img/test.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
 RSS: false
-# weibo_username:     qiubaiying
-zhihu_username:     phillip-60
+# weibo_username:     无
 github_username:    u5656487
 facebook_username:  PhillipEngineeringWei
-#twitter_username:   qiubaiying
+linkedin_username:  phillip-xing-662b12a3
+zhihu_username:     phillip-60
+#twitter_username:   有但账号忘了
 
 
 
