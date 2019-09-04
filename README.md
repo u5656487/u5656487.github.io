@@ -53,13 +53,13 @@
 
 ```
 # Site settings
-title: BY Blog                    # 你的博客网站标题
+title: Phillip Blog                    # 你的博客网站标题
 SEOTitle: Phillip的博客 | By Blog		# SEO 标题
 description: "Hey"	   	   # 随便说点，描述一下
 
 # SNS settings
-github_username: qiubaiying     # 你的github账号
-jianshu_username: e71990ada2fd  # 你的简书ID。
+github_username:      # 你的github账号
+jianshu_username:     # 你的简书ID。
 
 # Build settings
 # paginate: 10              # 一页你准备放几篇文章
@@ -76,15 +76,16 @@ yaml 头文件长这样:
 ```
 ---
 layout:     post
-title:      定时器 你真的会使用吗？
-subtitle:   iOS定时器详解
-date:       2016-12-13
-author:     BY
-header-img: img/post-bg-ios9-web.jpg
+title:      MapReduce的shuffle过程
+subtitle:   shuffle过程详解
+date:       2016-03-12
+author:     Phillip
+header-img: img/Shuffling.jpg
 catalog: 	 true
 tags:
-    - iOS
-    - 定时器
+    - Hadoop
+    - shuffle
+    - Big Data
 ---
 
 ```
@@ -92,7 +93,7 @@ tags:
 ### 侧边栏
 
 看右边:
-![](https://raw.githubusercontent.com/qiubaiying/qiubaiying.github.io/master/img/readme-side.png)
+![](https://raw.githubusercontent.com/u5656487/u5656487.github.io/master/img/side-bar.png)
 
 设置是在 `_config.yml`文件里面的`Sidebar settings`那块。
 
@@ -127,7 +128,7 @@ featured-condition-size: 1     # A tag will be featured if the size of it is mor
 
 ### Social-media Account
 
-在下面输入的社交账号，没有的添加的不会显示在侧边框中。新加入了[简书](https:/www.jianshu.com)链接, <http://www.jianshu.com/u/e71990ada2fd>
+在下面输入的社交账号，没有的添加的不会显示在侧边框中。新加入了[简书](https:/www.jianshu.com)链接, <http://www.jianshu.com/u/>
 
 	# SNS settings
 	RSS: false
@@ -155,8 +156,8 @@ friends: [
         href: "https://u5656487.github.io/"
     },
     {
-        title: "Apple",
-        href: "https://apple.com/"
+        title: "K2l Pty Ltd",
+        href: "https://www.koalabond.com/"
     }
 ]
 ```
