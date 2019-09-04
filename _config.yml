@@ -100,7 +100,7 @@ service-worker: true
 friends: [
     {
         title: "Qiū Ruì",
-        href: "https://github.com/rexarski"
+        href: "https://interetro.rbind.io/"
     },{
         title: "Zixuan Zheng",
         href: "https://johngorillazheng.github.io/archives/"
