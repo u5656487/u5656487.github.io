@@ -5,7 +5,7 @@ subtitle:   shuffle过程详解
 date:       2016-03-12
 author:     Phillip
 header-img: img/post-wp1.jpg
-catalog: 	 true
+catalog: 	true
 tags:
     - Hadoop
     - shuffle
