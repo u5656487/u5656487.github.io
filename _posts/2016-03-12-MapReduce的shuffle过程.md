@@ -4,7 +4,7 @@ title:      MapReduce的shuffle过程
 subtitle:   shuffle过程详解
 date:       2016-03-12
 author:     Phillip
-header-img: img/Shuffling.jpg
+header-img: img/post-wp1.jpg
 catalog: 	 true
 tags:
     - Hadoop
