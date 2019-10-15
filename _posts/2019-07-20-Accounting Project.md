@@ -1,25 +1,25 @@
 ---
 layout:     post
 title:      Accounting Projects
-subtitle:   ANU_BUSN_Courses
-date:       2019-07-20
+subtitle:   ANU_BUSN_COURSES_2019
+date:       2019-10-15
 author:     Phillip
 header-img: img/post-bg-universe.jpg
 catalog: true
 tags:
-    - Research projects
+    - Research Projects
     - Accounting
 ---
 
 
-> <font face="Times New Roman">ANU Group Assignment Projects for Accounting</font> 
+> <font face="Times New Roman">ANU Accounting Courses Group Assignment Projects</font> 
 
 <font face="Times New Roman">
 This semester is quite busy for me because apart from backend development learning, I also have three accounting research projects at the same time. Now, since most of research projects have completed, I want to sort out all my current individual and group research accounting projects, maybe I will add more in my further studying.  <br> 
 
-Accounting is a subjective discipline. Compared with traditional accounting, t seems most of my friends prefer to choose consulting. For me, accounting is a tool (or skill). I'm not sure whether I will be able to a eligible accountant in the future. But maybe I need to pass CPA exams at first and then consider later things. </font>
+Accounting is a subjective discipline. Compared with traditional accounting, it seems most of my friends prefer to choose consulting. For me, accounting is a tool (or skill). I'm not sure whether I will be able to a eligible accountant in the future. But maybe I need to pass CPA exams at first and then consider later things. </font>
 
-<font size="1">**Notice**: The requirements of the projects are reserved by ©Australian National University, the projects are all reserved by ©authors written in the report.</font>
+<font size="1"> **Notice**: The requirements of the projects are reserved by ©Australian National University, the projects are all reserved by ©authors written in the report.</font>
 
 ## BUSN 2011 Management Accounting
 
