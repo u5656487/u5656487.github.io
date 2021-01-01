@@ -41,3 +41,5 @@ In this assignment, my primiary mission is to calculate three different types of
 - <b>Team assignment</b>:  <a href="https://raw.githubusercontent.com/u5656487/u5656487.github.io/master/img/BUSN3001_assignment_instructions.pdf" target="_blank">BUSN 3001 Group Assignment</a>
 
 - <b>The group project</b>: <a href="https://raw.githubusercontent.com/u5656487/u5656487.github.io/master/img/BUSN3001_Assignment_Part_B.pdf" target="_blank">BUSN 3001 Group Project</a>
+
+Here is the 
